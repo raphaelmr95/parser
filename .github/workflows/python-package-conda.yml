@@ -26,3 +26,4 @@ jobs:
           heroku_app_name: "otc-parser"
           heroku_email: "raphaelmr95@gmail.com"
           rollbackonhealthcheckfailed: true
+        run: uvicorn main:app --reload
