@@ -25,5 +25,4 @@ jobs:
           heroku_api_key:  "dcde7ba3-540c-4f12-9f24-c144565dd73a"
           heroku_app_name: "otc-parser"
           heroku_email: "raphaelmr95@gmail.com"
-          healthcheck: "https://otc-parser.herokuapp.com/healthcheck"
           rollbackonhealthcheckfailed: true
