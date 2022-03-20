@@ -13,7 +13,6 @@ jobs:
   deploy:
     # If the test & lint jobs don't pass,
     # the deploy job willn't even execute
-    needs: [test, lint]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
