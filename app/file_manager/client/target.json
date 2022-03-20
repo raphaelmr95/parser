@@ -1,0 +1,15 @@
+{
+    "looting": {
+        "items": [],
+        "maxDanger": 10,
+        "minCapacity": 100,
+        "containers": [
+            {
+                "count": 1,
+                "id": 2854
+            }
+        ],
+        "everyItem": false
+    },
+    "targeting": []
+}
