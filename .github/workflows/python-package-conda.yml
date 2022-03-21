@@ -22,7 +22,7 @@ jobs:
         # https://github.com/akhileshns/heroku-deploy
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
-          heroku_api_key:  "dcde7ba3-540c-4f12-9f24-c144565dd73a"
+          heroku_api_key:  ${{ secrets.HEROKU_KEY }}
           heroku_app_name: "otc-parser"
           heroku_email: "raphaelmr95@gmail.com"
           rollbackonhealthcheckfailed: true
