@@ -1,7 +1,7 @@
 from abc import abstractmethod
 import json
 import os
-from utils.read_files.factory_read import ReadXml
+from app.utils.read_files.factory_read import ReadXml
 
 class WindBot:
 
