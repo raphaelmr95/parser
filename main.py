@@ -9,7 +9,7 @@ import os
 app = FastAPI()
 FILE_FOLDER = f'{os.path.dirname(os.getcwd())}/parser/app/file_manager'
 templates = Jinja2Templates(directory=f'{FILE_FOLDER}/templates/')
-print(f'{FILE_FOLDER}/parser/app/file_manager/templates/')
+print(f'{FILE_FOLDER}/templates/')
 
 VALID_EXTENSIONS = ['xml']
 
