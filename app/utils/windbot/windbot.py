@@ -104,6 +104,15 @@ extensions:[[
                 payload['danger'] = int(_.find('setting').get('danger'))
                 payload['keepDistanceRange'] = int(_.find('setting').get('distance'))
                 template_object['targeting'].append(payload)
+            
+            for loot in self.wind_file.find_all('lootitem'):
+                payload = {
+                    'name': loot.get('name'),
+                    'id': int(loot.get('id')),
+                    'count': 100,
+                }
+                template_object['looting']['items'].append(payload)
+
         order_by_danger = sorted(template_object['targeting'], key=lambda x: x['danger'], reverse=True)
         template_object['targeting'] = order_by_danger
         return template_object
