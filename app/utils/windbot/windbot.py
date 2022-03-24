@@ -89,7 +89,7 @@ extensions:[[
         return str_object
     
     def get_wind_creatures_to_otc_creatures(self) -> json:
-        with open('file_manager/templates/template_target.json', 'r') as template:
+        with open('./app/file_manager/templates/template_target.json', 'r') as template:
             template_object = json.load(template)
             for _ in self.wind_file.find_all('creature'):
                 payload = self.get_target_payload
