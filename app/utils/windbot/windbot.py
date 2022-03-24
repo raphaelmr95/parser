@@ -126,22 +126,24 @@ class WriteOtcFiles(WindToOtc):
     
     @property
     def create_wpt_cfg(self) -> None:
-        with open(f'{self.path}/windbot.cfg', 'w') as file:
+        with open(f'{self.path}/{self.__file_name}.cfg', 'w') as file:
             cfg = ''.join(self.get_wind_waypoints_to_otc_waypoints())
             file.write(cfg)
     
     @property
     def create_target_cfg(self) -> None:
-        open(f'{self.path}/target.json', 'w').write(json.dumps(self.get_wind_creatures_to_otc_creatures(), indent=4))
+        open(f'{self.path}/{self.__file_name}.json', 'w').write(json.dumps(self.get_wind_creatures_to_otc_creatures(), indent=4))
     
-    def create_all_configs(self) -> None:
+    async def create_all_configs(self) -> None:
         self.create_wpt_cfg
         self.create_target_cfg
         self.zip_files()
 
     def zip_files(self) -> None:
         import zipfile
+        import os
         with zipfile.ZipFile(f'{self.__file_name}.zip', 'w') as zip_file:
-            zip_file.write(f'{self.path}/windbot.cfg', 'windbot.cfg')
-            zip_file.write(f'{self.path}/target.json', 'target.json')
+            zip_file.write(f'{self.path}/{self.__file_name}.cfg', f'{self.__file_name}.cfg')
+            zip_file.write(f'{self.path}/{self.__file_name}.json', f'{self.__file_name}.json')
             zip_file.close()
+
