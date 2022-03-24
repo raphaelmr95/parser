@@ -112,7 +112,7 @@ class WriteOtcFiles(WindToOtc):
 
     def __init__(self, file, filename: str):
         super().__init__(file)
-        self.path = f'{os.path.dirname(os.getcwd())}/app/file_manager/server'
+        self.path = f'./app/file_manager/server'
         self.__file_name = filename
     
     @property
