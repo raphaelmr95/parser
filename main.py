@@ -4,9 +4,24 @@ from fastapi.responses import FileResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 from typing import List
-import os
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+origins = [
+    "http://127.0.0.1:3000",
+    "http://localhost:3000",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["POST", "GET"],
+		allow_headers=["*"],
+    max_age=3600,
+)
+
 FILE_FOLDER = f'./app/file_manager'
 templates = Jinja2Templates(directory="./app/file_manager/templates/")
 

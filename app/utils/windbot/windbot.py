@@ -94,7 +94,7 @@ extensions:[[
             for _ in self.wind_file.find_all('creature'):
                 payload = self.get_target_payload
                 # Check if creature is variouos
-                if _.get('name') == 'Others':
+                if _.get('name') == 'Others' or _.get('name') == 'All':
                     payload['name'] = '*'
                     payload['regex'] = str.lower(f'^.*$')
                 else:
